@@ -2608,6 +2608,10 @@ footer {
     }
   }
 
+  function articleFor(word) {
+    return /^[aeiou]/i.test(word.trim()) ? 'An' : 'A';
+  }
+
   /* ============================================================
      AUDIO — procedural, no dependencies
      ============================================================ */
@@ -3145,7 +3149,7 @@ var NOTICE_ACT = [
 
     showToast(
       lbl,
-      'A ' + adj + ' <strong>user ' + id + '</strong> just ' + act
+      articleFor(adj) + ' ' + adj + ' <strong>user ' + id + '</strong> just ' + act
     );
   }
 
